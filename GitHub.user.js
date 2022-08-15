@@ -11,4 +11,3 @@
 // @require https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js
 // @require https://cdn.jsdelivr.net/npm/hotkeys-js@3.7.3/dist/hotkeys.min.js
 // ==/UserScript==
-
