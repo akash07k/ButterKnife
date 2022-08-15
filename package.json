@@ -4,6 +4,7 @@
   "description": "ButterKnife is a set of userscripts to improve and enhance the accessibility as well as usability of various sites across the web",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --fix . && echo 'Lint complete.'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
