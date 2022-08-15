@@ -55,19 +55,6 @@ function makeHidden(element) {
 }
 
 /**
- * Makes some nodes to be owned by an element
- * @param {HTMLElement} parentElement - The element which we want to mark as presentational
- * @param {node} listOfNodes - The list of the nodes
- */
-function makeElementOwn(parentElement, listOfNodes) {
-    ids = [];
-    for (const node of listOfNodes) {
-        ids.push(setAriaIdIfNecessary(node));
-    }
-    parentElement.setAttribute(`aria-owns`, ids.join(` `));
-}
-
-/**
  * Sets the label for an element
  * @param {HTMLElement} element - The element for which whe want to define the label
  * @param {String} label - The label for the element
@@ -93,10 +80,48 @@ function setExpanded(element, expanded) {
 let idCounter = 0;
 function setAriaIdIfNecessary(element) {
     if (!element.id) {
-        element.setAttribute(`id`, `bkn-${idCounter++}`);
+        element.setAttribute(`id`, `bkn-${idCounter + 1}`);
     }
     return element.id;
 }
+
+/**
+ * Makes some nodes to be owned by an element
+ * @param {HTMLElement} parentElement - The element which we want to mark as presentational
+ * @param {node} listOfNodes - The list of the nodes
+ */
+function makeElementOwn(parentElement, listOfNodes) {
+    let ids = [];
+    for (const node of listOfNodes) {
+        ids.push(setAriaIdIfNecessary(node));
+    }
+    parentElement.setAttribute(`aria-owns`, ids.join(` `));
+}
+
+/** * Define the actual tweaks. ** */
+
+/**
+ * Tweaks that only need to be applied on load.
+ */
+const LOAD_TWEAKS = [];
+
+/**
+ * Attributes that should be watched for changes and cause dynamic tweaks to be
+ * applied. For example, if there is a dynamic tweak which handles the state of
+ * a check box and that state is determined using an attribute, that attribute
+ * should be included here.
+ */
+const DYNAMIC_TWEAK_ATTRIBUTES = [];
+
+/**
+ * Tweaks that must be applied whenever a node is added/changed.
+ */
+const DYNAMIC_TWEAKS = [
+    {
+        selector: `#`,
+        tweak: (element) => {},
+    },
+];
 
 /**
  * Function to apply the tweaks when appropriate
@@ -129,12 +154,15 @@ function applyTweaks(root, tweaks, checkRoot) {
     }
 }
 
-const observer = new MutationObserver(function (mutations) {
+const observer = new MutationObserver((mutations) => {
+    // eslint-disable-next-line no-restricted-syntax
     for (const mutation of mutations) {
         try {
             if (mutation.type === `childList`) {
+                // eslint-disable-next-line no-restricted-syntax
                 for (const node of mutation.addedNodes) {
-                    if (node.nodeType != Node.ELEMENT_NODE) {
+                    if (node.nodeType !== Node.ELEMENT_NODE) {
+                        // eslint-disable-next-line no-continue
                         continue;
                     }
                     applyTweaks(node, DYNAMIC_TWEAKS, true);
@@ -148,31 +176,6 @@ const observer = new MutationObserver(function (mutations) {
         }
     }
 });
-
-/** * Define the actual tweaks. ** */
-
-/**
- * Tweaks that only need to be applied on load.
- */
-const LOAD_TWEAKS = [];
-
-/**
- * Attributes that should be watched for changes and cause dynamic tweaks to be
- * applied. For example, if there is a dynamic tweak which handles the state of
- * a check box and that state is determined using an attribute, that attribute
- * should be included here.
- */
-const DYNAMIC_TWEAK_ATTRIBUTES = [];
-
-/**
- * Tweaks that must be applied whenever a node is added/changed.
- */
-const DYNAMIC_TWEAKS = [
-    {
-        selector: `#`,
-        tweak: (element) => {},
-    },
-];
 
 export {
     makeHeading,

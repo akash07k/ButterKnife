@@ -12,6 +12,7 @@
     "rules": {
         "quotes": ["error", "backtick"],
         "linebreak-style": ["error", "windows"],
+        "no-console": "off",
         "prettier/prettier": "error"
     }
 }
