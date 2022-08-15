@@ -6,7 +6,7 @@
 - Copyright: 2022 Akash Kakkar
 - License: [AGNU Affero General Public License V3](LICENSE.md)
 
-  ButterKnife is an AddOn to improve and enhance the accessibility as well as usability of various sites across the web.
+  ButterKnife is a set of userscripts to improve and enhance the accessibility as well as usability of various sites across the web.
 
 # Table of Contents <!-- omit in toc -->
 
