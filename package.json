@@ -6,7 +6,6 @@
         "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir distribution --no-cache --detailed-report 0",
         "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr",
         "start": "parcel watch src/manifest.json --host localhost",
-        "run": "web-ext run",
         "lint": "eslint src",
         "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
         "test": "echo \"Error: no test specified\" && exit 1"
