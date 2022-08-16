@@ -1,60 +1,62 @@
 {
-  "name": "butterknife",
-  "version": "1.0.0",
-  "description": "ButterKnife is a web extension to improve and enhance the accessibility as well as usability of various sites across the web",
-  "scripts": {
-    "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir distribution --no-cache --detailed-report 0",
-    "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr",
-    "start": "parcel watch src/manifest.json --host localhost",
-    "run": "web-ext run",
-    "lint": "eslint src",
-    "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "browserslist": [
-    "last 1 Chrome version",
-    "last 1 Firefox version"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akash07k/ButterKnife.git"
-  },
-  "keywords": [
-    "Accessibility",
-    "Screen Reader",
-    "NVDA",
-    "JAWS",
-    "a11y",
-    "web",
-    "extension",
-    "chrome",
-    "edge",
-    "brave",
-    "firefox",
-    "usability"
-  ],
-  "author": "Akash Kakkar",
-  "license": "AGPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/akash07k/ButterKnife/issues"
-  },
-  "homepage": "https://github.com/akash07k/ButterKnife#readme",
-  "devDependencies": {
-    "@parcel/config-webextension": "^2.7.0",
-    "web-ext": "^7.2.0",
-    "eslint": "^8.22.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^22.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.0.0",
-    "npm-run-all": "^4.1.5",
-    "parcel": "^2.7.0",
-    "webextension-polyfill": "^0.10.0"
-  },
-  "dependencies": {
-    "webext-options-sync": "^4.0.0"
-  }
+    "name": "butterknife",
+    "version": "1.0.0",
+    "description": "ButterKnife is a web extension to improve and enhance the accessibility as well as usability of various sites across the web",
+    "scripts": {
+        "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir distribution --no-cache --detailed-report 0",
+        "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr",
+        "start": "parcel watch src/manifest.json --host localhost",
+        "run": "web-ext run",
+        "lint": "eslint src",
+        "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "browserslist": [
+        "last 1 Chrome version",
+        "last 1 Firefox version"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/akash07k/ButterKnife.git"
+    },
+    "keywords": [
+        "Accessibility",
+        "Screen Reader",
+        "NVDA",
+        "JAWS",
+        "a11y",
+        "web accessibility",
+        "web",
+        "extension",
+        "chrome",
+        "edge",
+        "brave",
+        "firefox",
+        "usability"
+    ],
+    "author": "Akash Kakkar",
+    "license": "AGPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/akash07k/ButterKnife/issues"
+    },
+    "homepage": "https://github.com/akash07k/ButterKnife#readme",
+    "devDependencies": {
+        "@parcel/config-webextension": "^2.7.0",
+        "eslint": "^8.22.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard-with-typescript": "^22.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.2.4",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-promise": "^6.0.0",
+        "npm-run-all": "^4.1.5",
+        "parcel": "^2.7.0",
+        "web-ext": "^7.2.0",
+        "webextension-polyfill": "^0.10.0"
+    },
+    "dependencies": {
+        "webext-base-css": "^1.4.1",
+        "webext-options-sync": "^4.0.0"
+    }
 }
