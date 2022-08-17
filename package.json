@@ -4,7 +4,7 @@
     "description": "ButterKnife is a web extension to improve and enhance the accessibility as well as usability of various sites across the web",
     "scripts": {
         "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir distribution --no-cache --detailed-report 0",
-        "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache --no-hmr",
+        "watch": "parcel watch src/manifest.json --dist-dir distribution --no-cache",
         "start": "parcel watch src/manifest.json --host localhost",
         "lint": "eslint src",
         "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
