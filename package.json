@@ -3,12 +3,9 @@
     "version": "1.0.0",
     "description": "ButterKnife is a web extension to improve and enhance the accessibility as well as usability of various sites across the web",
     "scripts": {
-        "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir dist --no-cache --detailed-report 0",
-        "build-firefox": "parcel build src/manifest-firefox.json --no-content-hash --no-source-maps --dist-dir dist --no-cache --detailed-report 0",
+        "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir dist --no-cache --detailed-report 10",
         "watch": "parcel watch src/manifest.json --host localhost --dist-dir dist",
-        "watch-firefox": "parcel watch src/manifest-firefox.json --host localhost --dist-dir dist",
-        "start": "web-ext run --target chromium",
-        "start-firefox": "web-ext run --target firefox",
+        "start": "web-ext run",
         "lint": "eslint src",
         "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
         "test": "echo \"Error: no test specified\" && exit 1"
