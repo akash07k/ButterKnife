@@ -8,6 +8,7 @@
         "start": "web-ext run",
         "lint": "eslint src",
         "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
+        "lint-dist": "web-ext lint",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "browserslist": [
