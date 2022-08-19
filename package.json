@@ -3,12 +3,17 @@
     "version": "1.0.0",
     "description": "ButterKnife is a web extension to improve and enhance the accessibility as well as usability of various sites across the web",
     "scripts": {
-        "build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir dist --no-cache --detailed-report 10",
+        "build:chrome": "parcel build src/chrome/manifest.json --no-content-hash --no-source-maps --dist-dir dist/chrome --no-cache --detailed-report 10",
+        "build:firefox": "parcel build src/firefox/manifest.json --no-content-hash --no-source-maps --dist-dir dist/firefox --no-cache --detailed-report 10",
         "watch": "parcel watch src/manifest.json --host localhost --dist-dir dist",
         "start": "web-ext run",
         "lint": "eslint src",
-        "lint-fix": "eslint src --fix . && echo 'Lint complete.'",
-        "lint-dist": "web-ext lint",
+        "lint:fix": "eslint src --fix . && echo 'Lint complete.'",
+        "clean": "rm -rf dist",
+        "clean:chrome": "rm -rf dist/chrome",
+        "clean:firefox": "rm -rf dist/firefox",
+        "package:chrome": "web-ext build --overwrite-dest --source-dir dist/chrome --artifacts-dir dist/chrome",
+        "package:firefox": "web-ext build --overwrite-dest --source-dir dist/firefox --artifacts-dir dist/firefox",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "browserslist": [
@@ -62,9 +67,15 @@
         "webextension-polyfill": "^0.10.0"
     },
     "webExt": {
-        "sourceDir": "dist",
+        "sourceDir": "src/firefox",
         "artifactsDir": "dist",
         "verbose": true
+    },
+    "@parcel/bundler-default-bug": "https://github.com/parcel-bundler/parcel/issues/8071",
+    "@parcel/bundler-default": {
+        "minBundles": 10000000,
+        "minBundleSize": 3000,
+        "maxParallelRequests": 20
     }
 }
 
