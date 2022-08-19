@@ -9,23 +9,23 @@
     "manifest_version": 3,
     "minimum_chrome_version": "100",
     "icons": {
-        "128": "icons/128.png"
+        "128": "../icons/128.png"
     },
     "options_ui": {
         "browser_style": true,
         "open_in_tab": true,
-        "page": "options/pages/options.html"
+        "page": "../options/pages/options.html"
     },
     "content_scripts": [
         {
             "matches": ["https://github.com/*"],
-            "js": ["scripts/content/GitHub.js"],
+            "js": ["../scripts/content/GitHub.js"],
             "run_at": "document_end"
         }
     ],
 
     "background": {
-        "service_worker": "scripts/background/background.js",
+        "service_worker": "../scripts/background/background.js",
         "type": "module"
     },
     "permissions": ["storage"],
