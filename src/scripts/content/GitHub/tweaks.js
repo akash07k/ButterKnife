@@ -64,6 +64,13 @@ export const DYNAMIC_TWEAKS = [
             _common.setDescription(title, status.attr(`aria-label`));
         },
     },
+    {
+        // Issues tab
+        selector: `#issues-tab`,
+        tweak: (element) => {
+            _common.setAccessKey(element, `i`);
+        },
+    },
 ];
 
 /**
