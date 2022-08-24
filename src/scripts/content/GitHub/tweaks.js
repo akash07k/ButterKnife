@@ -1,3 +1,4 @@
+import * as $ from "jquery";
 import * as _common from "../../../libs/common";
 
 /**
@@ -13,8 +14,7 @@ export const LOAD_TWEAKS = [];
 export const DYNAMIC_TWEAKS = [
     {
         // Prenotification control (The notification control which displays before logging in)
-        selector:
-            "#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(2) > a",
+        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(2) > a`,
         tweak: (element) => {
             // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
@@ -24,8 +24,7 @@ export const DYNAMIC_TWEAKS = [
 
     // Prefork control (The fork control which displays before logging in)
     {
-        selector:
-            "#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(3) > a",
+        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(3) > a`,
         tweak: (element) => {
             // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
@@ -45,12 +44,23 @@ export const DYNAMIC_TWEAKS = [
 
     // Prestar control
     {
-selector: "#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(4) > div > a",
-tweak: (element) => {
+        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(4) > div > a`,
+        tweak: (element) => {
             // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
             _common.makeButton(element);
-}
+        },
+    },
+    // Issue listing
+    {
+        selector: `div.js-issue-row`,
+        tweak: (element) => {
+            // Convert it into a heading and associate the issue status
+            const title = $(element).find(` > div > div > a`); // Issue title
+            const status = $(element).find(` > div > div > span`); // Issue status
+            _common.makeHeading(title, 3);
+            _common.setDescription(title, status.attr(`aria-label`));
+        },
     },
 ];
 
