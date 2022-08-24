@@ -75,6 +75,7 @@
     "dependencies": {
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
+        "@github/hotkey": "^2.0.1",
         "concurrently": "^7.3.0",
         "dompurify": "^2.3.12",
         "jquery": "^3.6.0",
