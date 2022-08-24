@@ -57,7 +57,7 @@ export const DYNAMIC_TWEAKS = [
     },
     // Star button
     {
-        selector: `#repository-container-header > div.d-flex > ul > li:nth-child(3) > div > form.starred.js-social-form.BtnGroup-parent.flex-auto.js-deferred-toggler-target > button`,
+        selector: `#repository-container-header > div.d-flex > ul > li:nth-child(4) > div > form.js-social-form > button`,
         tweak: (element) => {
             // Define the hotkey: `Alt+Shift+8`
             _common.setHotkey(element, `Alt+Shift+*`, `Alt+Shift+8`);
