@@ -29,7 +29,7 @@ export const DYNAMIC_TWEAKS = [
             // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
             _common.makeButton(element);
-            _common.setAccessKey(element, `f`);
+            _common.setHotkey(element, `Alt+F`, `Alt+Shift+f`);
         },
     },
 
@@ -40,7 +40,7 @@ export const DYNAMIC_TWEAKS = [
             // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
             _common.makeButton(element);
-            _common.setAccessKey(element, `f`);
+            _common.setHotkey(element, `Alt+F`, `Alt+Shift+f`);
         },
     },
 
@@ -68,7 +68,7 @@ export const DYNAMIC_TWEAKS = [
         // Issues tab
         selector: `#issues-tab`,
         tweak: (element) => {
-            _common.setAccessKey(element, `i`);
+            _common.setHotkey(element, `Alt+I`, `Alt+Shift+i`);
         },
     },
 ];

@@ -86,6 +86,16 @@ function setAccessKey(element, key) {
 }
 
 /**
+ * Sets the hotkey for an element
+ * @param {HTMLElement} element - The element for which whe want to define the hotkey
+ * @param {String} key - The hotkey for the element
+ * @param {String} friendlyKey - The user understandable hotkey string
+ */
+function setHotkey(element, key, friendlyKey) {
+    $(element).attr(`data-hotkey`, key).attr(`aria-keyshortcuts`, friendlyKey);
+}
+
+/**
  * Marks an element as expanded. (Generally used for the controls such as listboxes, comboboxes etc.)
  * @param {HTMLElement} element Desired element such as listbox, combobox etc.
  * @param {Boolean} expanded - Desired state
@@ -196,6 +206,7 @@ export {
     setLabel,
     setDescription,
     setAccessKey,
+    setHotkey,
     setExpanded,
     setAriaIdIfNecessary,
     init,
