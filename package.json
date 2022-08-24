@@ -59,7 +59,7 @@
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard-with-typescript": "^22.0.0",
         "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-n": "^15.2.4",
+        "eslint-plugin-n": "^15.2.5",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-promise": "^6.0.0",
         "parcel": "^2.7.0",
@@ -67,7 +67,7 @@
     },
     "dependencies": {
         "concurrently": "^7.3.0",
-        "dompurify": "^2.3.10",
+        "dompurify": "^2.3.12",
         "jquery": "^3.6.0",
         "webext-base-css": "^1.4.1",
         "webext-options-sync": "^4.0.0",
@@ -85,4 +85,3 @@
         "maxParallelRequests": 20
     }
 }
-
