@@ -68,6 +68,15 @@ function setLabel(element, label) {
 }
 
 /**
+ * Sets the description for an element
+ * @param {HTMLElement} element - The element for which whe want to define the description
+ * @param {String} description - The description for the element
+ */
+function setDescription(element, description) {
+    $(element).attr(`aria-description`, description);
+}
+
+/**
  * Marks an element as expanded. (Generally used for the controls such as listboxes, comboboxes etc.)
  * @param {HTMLElement} element Desired element such as listbox, combobox etc.
  * @param {Boolean} expanded - Desired state
@@ -176,6 +185,7 @@ export {
     makeHidden,
     makeElementOwn,
     setLabel,
+    setDescription,
     setExpanded,
     setAriaIdIfNecessary,
     init,
