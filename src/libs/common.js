@@ -77,6 +77,15 @@ function setDescription(element, description) {
 }
 
 /**
+ * Sets the access key for an element
+ * @param {HTMLElement} element - The element for which whe want to define the access key
+ * @param {String} key - The key for the element
+ */
+function setAccessKey(element, key) {
+    $(element).attr(`accesskey`, key);
+}
+
+/**
  * Marks an element as expanded. (Generally used for the controls such as listboxes, comboboxes etc.)
  * @param {HTMLElement} element Desired element such as listbox, combobox etc.
  * @param {Boolean} expanded - Desired state
@@ -186,6 +195,7 @@ export {
     makeElementOwn,
     setLabel,
     setDescription,
+    setAccessKey,
     setExpanded,
     setAriaIdIfNecessary,
     init,
