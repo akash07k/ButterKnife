@@ -11,14 +11,46 @@ export const LOAD_TWEAKS = [];
  * Tweaks that must be applied whenever a node is added/changed.
  */
 export const DYNAMIC_TWEAKS = [
-    // Fork repository control.
-    // It will be converted to link
     {
-        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(3) > div > a`,
+        // Prenotification control (The notification control which displays before logging in)
+        selector:
+            "#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(2) > a",
         tweak: (element) => {
+            // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
             _common.makeButton(element);
         },
+    },
+
+    // Prefork control (The fork control which displays before logging in)
+    {
+        selector:
+            "#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(3) > a",
+        tweak: (element) => {
+            // Convert it into a button for screen reader users
+            // We don't want to change the label so don't pass any argument for that
+            _common.makeButton(element);
+        },
+    },
+
+    // Fork repository control.
+    {
+        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(3) > div > a`,
+        tweak: (element) => {
+            // Convert it into a button for screen reader users
+            // We don't want to change the label so don't pass any argument for that
+            _common.makeButton(element);
+        },
+    },
+
+    // Prestar control
+    {
+selector: "#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(4) > div > a",
+tweak: (element) => {
+            // Convert it into a button for screen reader users
+            // We don't want to change the label so don't pass any argument for that
+            _common.makeButton(element);
+}
     },
 ];
 
