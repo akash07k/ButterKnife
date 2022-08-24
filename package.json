@@ -1,7 +1,7 @@
 {
     "name": "butterknife",
-    "version": "1.0.0",
-    "description": "ButterKnife is a web extension to improve and enhance the accessibility as well as usability of various sites across the web",
+    "version": "1.1.0",
+    "description": "ButterKnife is a browser extension to improve and enhance the accessibility as well as usability of various sites across the web",
     "scripts": {
         "build": "concurrently \"npm run clean\" \"npm run build:chrome\" \"npm run build:firefox\"",
         "build:chrome": "parcel build src/chrome/manifest.json --no-content-hash --no-source-maps --dist-dir dist/chrome --no-cache --detailed-report 10",
@@ -21,7 +21,12 @@
         "package": "concurrently \"npm run package:chrome\" \"npm run package:firefox\"",
         "package:chrome": "web-ext build --overwrite-dest --source-dir dist/chrome --artifacts-dir dist/chrome",
         "package:firefox": "web-ext build --overwrite-dest --source-dir dist/firefox --artifacts-dir dist/firefox",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install",
+        "release": "standard-version",
+        "release:minor": "standard-version --release-as minor",
+        "release:patch": "standard-version --release-as patch",
+        "release:major": "standard-version --release-as major"
     },
     "browserslist": [
         "last 1 Chrome version",
@@ -62,10 +67,14 @@
         "eslint-plugin-n": "^15.2.5",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-promise": "^6.0.0",
+        "husky": "^8.0.0",
         "parcel": "^2.7.0",
+        "standard-version": "^9.5.0",
         "web-ext": "^7.2.0"
     },
     "dependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
         "concurrently": "^7.3.0",
         "dompurify": "^2.3.12",
         "jquery": "^3.6.0",
@@ -85,3 +94,4 @@
         "maxParallelRequests": 20
     }
 }
+
