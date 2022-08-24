@@ -2,41 +2,36 @@
 
 **Warning: forced push anytime. Be careful!**
 
-- Author: Akash Kakkar
-- Copyright: 2022 Akash Kakkar
-- License: [AGNU Affero General Public License V3](LICENSE.md)
+-   Author: Akash Kakkar
+-   Copyright: 2022 Akash Kakkar
+-   License: [AGNU Affero General Public License V3](LICENSE.md)
 
-  ButterKnife is a set of userscripts to improve and enhance the accessibility as well as usability of various sites across the web.
+    ButterKnife is a browser extension to improve and enhance the accessibility as well as usability of various sites across the web.
 
 # Table of Contents <!-- omit in toc -->
 
 - [How to use](#how-to-use)
-- [Scripts](#scripts)
+- [Features](#features)
   - [GitHub Accessibility Fixes](#github-accessibility-fixes)
 
 ## How to use
 
-To use user scripts you need to first install a user script manager. Here are managers for various browsers:
+-   todo
 
-- [Greasemonkey](http://www.greasespot.net/) - Firefox
-  - Supports GM 4 userscripts.
-- [Greasemonkey for Pale Moon](https://github.com/janekptacijarabaci/greasemonkey/releases) - Pale Moon
-  - Supports GM 3 userscripts.
-- [Firemonkey](https://addons.mozilla.org/firefox/addon/firemonkey/) - Firefox
-  - Supports GM 4 userscripts and some GM 3 userscripts.
-- [Tampermonkey](https://tampermonkey.net/) - Chrome, Microsoft Edge, Safari, Opera, Firefox (also with support for mobile Dolphin Browser and UC Browser)
-  - Supports both GM 3 and GM 4 userscripts.
-- [USI](https://addons.mozilla.org/firefox/addon/userunified-script-injector/) - Firefox
-  - Supports some GM 3 userscripts.
-- [Violentmonkey](https://violentmonkey.github.io/) - Chrome, Firefox, Maxthon, Opera
-  - Supports both GM 3 and GM 4 userscripts.
+## Features
 
-The most popular userscript managers are Greasemonkey, Tampermonkey, and Violentmonkey.
-
-## Scripts
-
-Following is the info about each script including it's download/installation link.
+Extension currently contains following features:
 
 ### GitHub Accessibility Fixes
 
-- todo
+- Converts many links/controls into buttons for better navigation such as:
+    * Prenotification control: (The Notification control which displays when we are not signed in)
+    * Prefork control: (The Fork Repository control which displays when we are not signed in)
+    * Fork Repository control
+    * Prestar control: (The Star Repository control which displays when we are not signed in)
+
+- Asigns the AccessKey for Fork Repository control for quicker action
+- Makes the Issue listings more accessible by implementing each issue title in heading and associating their status
+
+
+
