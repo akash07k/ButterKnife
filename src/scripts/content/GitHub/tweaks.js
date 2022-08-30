@@ -75,19 +75,29 @@ export const DYNAMIC_TWEAKS = [
             _common.setDescription(title, status.attr(`aria-label`));
         },
     },
+    // Issues tab
     {
-        // Issues tab
         selector: `#issues-tab`,
         tweak: (element) => {
             // Define hotkey: `Alt+Shift+I`
             _common.setHotkey(element, `Alt+I`, `Alt+Shift+i`);
         },
     },
+    // Pull Requests tab
     {
         selector: `#pull-requests-tab`,
         tweak: (element) => {
             // Define hotkey: `Alt+Shift+P`
             _common.setHotkey(element, `Alt+P`, `Alt+Shift+p`);
+        },
+    },
+    // Releases
+    {
+        // We'll have to use absolute selector here since the link is not having any ID or relyable way to generate it's generic selector
+        selector: `#repo-content-pjax-container > div > div > div.Layout.Layout--flowRow-until-md.Layout--sidebarPosition-end.Layout--sidebarPosition-flowRow-end > div.Layout-sidebar > div > div:nth-child(2) > div > h2 > a`,
+        tweak: (element) => {
+            // Define hotkey: `Alt+Shift+R`
+            _common.setHotkey(element, `Alt+R`, `Alt+Shift+r`);
         },
     },
 ];
