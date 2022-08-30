@@ -83,6 +83,13 @@ export const DYNAMIC_TWEAKS = [
             _common.setHotkey(element, `Alt+I`, `Alt+Shift+i`);
         },
     },
+    {
+        selector: `#pull-requests-tab`,
+        tweak: (element) => {
+            // Define hotkey: `Alt+Shift+P`
+            _common.setHotkey(element, `Alt+P`, `Alt+Shift+p`);
+        },
+    },
 ];
 
 /**
