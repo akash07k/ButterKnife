@@ -100,6 +100,14 @@ export const DYNAMIC_TWEAKS = [
             _common.setHotkey(element, `Alt+R`, `Alt+Shift+r`);
         },
     },
+    // Create New menu
+    {
+        selector: `body > div > header > div.Header-item:nth-child(6) > details.details-overlay > summary.Header-link`,
+        tweak: (element) => {
+            // Asign the hotkey
+            _common.setHotkey(element, `Alt+N`, `Alt+Shift+n`);
+        },
+    },
 ];
 
 /**
