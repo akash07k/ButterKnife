@@ -76,7 +76,7 @@
         "@commitlint/cli": "^17.1.2",
         "@commitlint/config-conventional": "^17.1.0",
         "@github/hotkey": "^2.0.1",
-        "concurrently": "^7.3.0",
+        "concurrently": "^7.4.0",
         "dompurify": "^2.4.0",
         "jquery": "^3.6.1",
         "webext-base-css": "^1.4.2",
