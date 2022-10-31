@@ -19,6 +19,14 @@ function makeRegion(element, label) {
 }
 
 /**
+ * Converts an element into alert
+ * @param {HTMLElement} element - The element which we want to convert into alert
+ */
+function makeAlert(element) {
+    $(element).attr(`role`, `alert`);
+}
+
+/**
  * Converts an element into button
  * @param {HTMLElement} element - The element which we want to convert into button
  * @param {String} label - Desired label for the button
@@ -198,6 +206,7 @@ function init(LOAD_TWEAKS, DYNAMIC_TWEAKS, DYNAMIC_TWEAK_ATTRIBUTES) {
 export {
     makeHeading,
     makeRegion,
+    makeAlert,
     makeButton,
     makeLink,
     makePresentational,
