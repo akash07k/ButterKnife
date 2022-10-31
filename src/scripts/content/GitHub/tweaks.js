@@ -53,6 +53,11 @@ export const DYNAMIC_TWEAKS = [
             _common.makeButton(element);
             // Define the hotkey: `Alt+Shift+8`
             _common.setHotkey(element, `Alt+Shift+*`, `Alt+Shift+8`);
+
+            // Make the star counter an alert as soon as the concerning control is clicked
+            $(element).on(`click`, () => {
+                _common.makeAlert(`#repo-stars-counter-star`);
+            });
         },
     },
 
@@ -62,6 +67,11 @@ export const DYNAMIC_TWEAKS = [
         tweak: (element) => {
             // Define the hotkey: `Alt+Shift+8`
             _common.setHotkey(element, `Alt+Shift+*`, `Alt+Shift+8`);
+
+            // Make the star counter an alert as soon as the concerning control is clicked
+            $(element).on(`click`, () => {
+                _common.makeAlert("#repo-stars-counter-unstar");
+            });
         },
     },
 
