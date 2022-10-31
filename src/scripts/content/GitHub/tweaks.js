@@ -13,7 +13,6 @@ export const LOAD_TWEAKS = [];
  */
 export const DYNAMIC_TWEAKS = [
     {
-
         // Prenotification control (The notification control which displays before logging in)
         selector: `#repository-container-header > div.d-flex > ul.pagehead-actions > li:nth-child(2) > a.tooltipped-s`,
         tweak: (element) => {
@@ -45,9 +44,9 @@ export const DYNAMIC_TWEAKS = [
         },
     },
 
-    // Prestar control
+    // Star control
     {
-        selector: `#repository-container-header > div.d-flex > ul > li:nth-child(4) > div > a.tooltipped-s`,
+        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(4) > div > div.unstarred.BtnGroup.flex-1 > form > button`,
         tweak: (element) => {
             // Convert it into a button for screen reader users
             // We don't want to change the label so don't pass any argument for that
@@ -56,10 +55,10 @@ export const DYNAMIC_TWEAKS = [
             _common.setHotkey(element, `Alt+Shift+*`, `Alt+Shift+8`);
         },
     },
-    // Star button
 
+    // Unstar button
     {
-        selector: `#repository-container-header > div.d-flex > ul > li:nth-child(4) > div > form.js-social-form > button`,
+        selector: `#repository-container-header > div.d-flex.flex-wrap.flex-justify-end.mb-3.px-3.px-md-4.px-lg-5 > ul > li:nth-child(4) > div > div.starred.BtnGroup.flex-1 > form > button`,
         tweak: (element) => {
             // Define the hotkey: `Alt+Shift+8`
             _common.setHotkey(element, `Alt+Shift+*`, `Alt+Shift+8`);
@@ -105,7 +104,7 @@ export const DYNAMIC_TWEAKS = [
             _common.setHotkey(element, `Alt+R`, `Alt+Shift+r`);
         },
     },
-    
+
     // Create New menu
     {
         selector: `body > div > header > div.Header-item:nth-child(6) > details.details-overlay > summary.Header-link`,
