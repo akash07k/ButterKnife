@@ -76,6 +76,7 @@
         "@commitlint/cli": "^17.2.0",
         "@commitlint/config-conventional": "^17.2.0",
         "@github/hotkey": "^2.0.1",
+        "@medv/finder": "^2.1.0",
         "concurrently": "^7.5.0",
         "dompurify": "^2.4.0",
         "jquery": "^3.6.1",
