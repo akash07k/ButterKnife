@@ -223,6 +223,28 @@ function getElementSelector(event) {
     return selector;
 }
 
+/**
+ * Copies the selector (CSS path) of an element to the clipboard
+ * @param {event} event - The event we want the selector for
+ * @returns {String} Selector (CSS path) of the element
+ */
+function copyElementSelector(event) {
+    const selector = getElementSelector(event);
+    navigator.clipboard
+        .writeText(selector)
+        .then(() => {
+            console.log(
+                `Successfully copied the selector: ${selector} to the clipboard`,
+            );
+        })
+        .catch(() => {
+            console.log(
+                `Failure while copying the selector: ${selector} to the clipboard`,
+            );
+        });
+    return selector;
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -240,4 +262,5 @@ export {
     setAriaIdIfNecessary,
     init,
     getElementSelector,
+    copyElementSelector,
 };
