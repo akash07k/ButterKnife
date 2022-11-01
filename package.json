@@ -79,6 +79,7 @@
         "@medv/finder": "^2.1.0",
         "concurrently": "^7.5.0",
         "dompurify": "^2.4.0",
+        "hotkeys-js": "^3.10.0",
         "jquery": "^3.6.1",
         "webext-base-css": "^1.4.3",
         "webext-options-sync": "^4.0.0",
