@@ -21,7 +21,13 @@
             "matches": ["https://github.com/*"],
             "js": ["../scripts/content/GitHub/index.js"],
             "run_at": "document_end"
+        },
+        {
+            "matches": ["https://*/*"],
+            "js": ["../scripts/content/universal/index.js"],
+            "run_at": "document_end"
         }
+
     ],
 
     "background": {
