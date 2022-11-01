@@ -245,6 +245,29 @@ function copyElementSelector(event) {
     return selector;
 }
 
+/**
+ * Copies the HTML code (outerHTML) of an element to the clipboard
+ * @param {event} event - The event we want the HTML code for
+ * @returns {String} HTML code (outerHTML) of the element
+ */
+function copyElementHTML(event) {
+    const selector = getElementSelector(event);
+    const HTML = $(selector).prop(`outerHTML`);
+    navigator.clipboard
+        .writeText(HTML)
+        .then(() => {
+            console.log(
+                `Successfully copied the HTML code: ${HTML} to the clipboard`,
+            );
+        })
+        .catch(() => {
+            console.log(
+                `Failure while copying the HTML code: ${HTML} to the clipboard`,
+            );
+        });
+    return HTML;
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -263,4 +286,5 @@ export {
     init,
     getElementSelector,
     copyElementSelector,
+    copyElementHTML,
 };
