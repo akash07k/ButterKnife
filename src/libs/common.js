@@ -1,4 +1,5 @@
 import * as $ from "jquery";
+import { finder } from "@medv/finder";
 
 /**
  * Converts an element into heading
@@ -203,6 +204,25 @@ function init(LOAD_TWEAKS, DYNAMIC_TWEAKS, DYNAMIC_TWEAK_ATTRIBUTES) {
     observer.observe(document, options);
 }
 
+/**
+ * Gets the selector (CSS path) of an element
+ * @param {event} event - The event we want the selector for
+ * @returns {String} Selector (CSS path) of the element
+ */
+function getElementSelector(event) {
+    const selector = finder(event.target, {
+        idName: (name) => true,
+        className: (name) => true,
+        tagName: (name) => true,
+        attr: (name, value) => false,
+        seedMinLength: 1,
+        optimizedMinLength: 2,
+        threshold: 1000,
+        maxNumberOfTries: 10_000,
+    });
+    return selector;
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -219,4 +239,5 @@ export {
     setExpanded,
     setAriaIdIfNecessary,
     init,
+    getElementSelector,
 };
