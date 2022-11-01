@@ -246,13 +246,23 @@ function copyElementSelector(event) {
 }
 
 /**
+ * Gets the HTML code (outerHTML) of an element
+ * @param {event} event - The event we want the HTML code for
+ * @returns {String} HTML code (outerHTML) of the element
+ */
+function getElementHTML(event) {
+    const selector = getElementSelector(event);
+    const HTML = $(selector).prop(`outerHTML`);
+    return HTML;
+}
+
+/**
  * Copies the HTML code (outerHTML) of an element to the clipboard
  * @param {event} event - The event we want the HTML code for
  * @returns {String} HTML code (outerHTML) of the element
  */
 function copyElementHTML(event) {
-    const selector = getElementSelector(event);
-    const HTML = $(selector).prop(`outerHTML`);
+    const HTML = getElementHTML(event);
     navigator.clipboard
         .writeText(HTML)
         .then(() => {
@@ -286,5 +296,6 @@ export {
     init,
     getElementSelector,
     copyElementSelector,
+    getElementHTML,
     copyElementHTML,
 };
