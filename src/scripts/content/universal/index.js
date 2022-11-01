@@ -23,11 +23,14 @@ $(document).ready(() => {
         (event, handler) => {
             switch (handler.key) {
                 case `alt+shift+1`:
-                    selector = _common.getElementSelector(event);
                     _common.copyElementSelector(event);
                     event.preventDefault();
                     break;
-
+                case `alt+shift+2`: {
+                    _common.copyElementHTML(event);
+                    event.preventDefault();
+                    break;
+                }
                 default:
                     break;
             }
