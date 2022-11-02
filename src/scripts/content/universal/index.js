@@ -32,7 +32,8 @@ $(document).ready(() => {
     function hookTorchMode() {
         $(document).click(() => {
             if (isTorchModeEnabled) {
-                _common.copyElementSelector(event);
+                const selector = _common.copyElementSelector(event);
+                _common.outputAlert(`body`, `Copied: ${selector}`);
                 torchLevelEvent = event;
                 event.preventDefault();
             }
@@ -48,28 +49,35 @@ $(document).ready(() => {
                 case `alt+shift+a`:
                     if (!isTorchModeEnabled) {
                         isTorchModeEnabled = true;
+                        _common.outputAlert(`body`, `Enabled Torch mode`);
                     } else if (isTorchModeEnabled) {
                         isTorchModeEnabled = false;
+                        _common.outputAlert(`body`, `Disabled Torch mode`);
                     }
 
                     event.preventDefault();
 
                     break;
 
-                case `alt+shift+1`:
-                    _common.copyElementSelector(event);
-                    event.preventDefault();
-                    break;
-                case `alt+shift+2`: {
-                    _common.copyElementHTML(event);
+                case `alt+shift+1`: {
+                    const selector = _common.copyElementSelector(event);
+                    _common.outputAlert(`body`, `Copied: ${selector}`);
                     event.preventDefault();
                     break;
                 }
-                case `alt+shift+3`:
+                case `alt+shift+2`: {
+                    const source = _common.copyElementHTML(event);
+                    _common.outputAlert(`body`, `Copied: ${source}`);
+                    event.preventDefault();
+                    break;
+                }
+                case `alt+shift+3`: {
                     if (isTorchModeEnabled) {
-                        _common.copyElementHTML(torchLevelEvent);
+                        const source = _common.copyElementHTML(torchLevelEvent);
+                        _common.outputAlert(`body`, `Copied: ${source}`);
                     }
                     break;
+                }
                 default:
                     break;
             }
