@@ -278,6 +278,14 @@ function copyElementHTML(event) {
     return HTML;
 }
 
+function outputAlert(selector, message) {
+    $(selector).append(`<div id="butterknife-status-alert"></div>`);
+    $(`#butterknife-status-alert`).text(message).attr(`role`, `alert`);
+    setTimeout(() => {
+        $(`#butterknife-status-alert`).remove();
+    }, 5000);
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -298,4 +306,5 @@ export {
     copyElementSelector,
     getElementHTML,
     copyElementHTML,
+    outputAlert,
 };
