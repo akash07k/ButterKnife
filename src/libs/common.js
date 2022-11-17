@@ -279,8 +279,10 @@ function copyElementHTML(event) {
 }
 
 function outputAlert(selector, message) {
-    $(selector).append(`<div id="butterknife-status-alert"></div>`);
-    $(`#butterknife-status-alert`).text(message).attr(`role`, `alert`);
+    const statusAlert = `butterknife-status-alert`;
+    $(selector).append(`<div id=${statusAlert}></div>`);
+    $(`#${statusAlert}`).addClass(`butterknife-status-alert`);
+    $(`#${statusAlert}`).text(message).attr(`role`, `alert`);
     setTimeout(() => {
         $(`#butterknife-status-alert`).remove();
     }, 10000);
