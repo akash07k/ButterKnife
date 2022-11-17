@@ -1,5 +1,6 @@
 import * as $ from "jquery";
 import { finder } from "@medv/finder";
+import getXPath from "./get-xpath";
 
 /**
  * Converts an element into heading
@@ -246,6 +247,38 @@ function copyElementSelector(event) {
 }
 
 /**
+ * Gets the XPath (XML path) of an element
+ * @param {event} event - The event we want the path for
+ * @returns {String} XPath (XML path) of the element
+ */
+function getElementXPath(event) {
+    const xPath = getXPath(event.target);
+    return xPath;
+}
+
+/**
+ * Copies the XPath (XML path) of an element to the clipboard
+ * @param {event} event - The event we want the XPath for
+ * @returns {String} XPath (XML path) of the element
+ */
+function copyElementXPath(event) {
+    const xPath = getElementXPath(event);
+    navigator.clipboard
+        .writeText(xPath)
+        .then(() => {
+            console.log(
+                `Successfully copied the XPath: ${xPath} to the clipboard`,
+            );
+        })
+        .catch(() => {
+            console.log(
+                `Failure while copying the XPath: ${xPath} to the clipboard`,
+            );
+        });
+    return xPath;
+}
+
+/**
  * Gets the HTML code (outerHTML) of an element
  * @param {event} event - The event we want the HTML code for
  * @returns {String} HTML code (outerHTML) of the element
@@ -311,6 +344,8 @@ export {
     init,
     getElementSelector,
     copyElementSelector,
+    getElementXPath,
+    copyElementXPath,
     getElementHTML,
     copyElementHTML,
     outputAlert,
