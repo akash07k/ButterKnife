@@ -43,7 +43,7 @@ $(document).ready(() => {
     // Let's hook the event for enable TorchMode to work
     hookTorchMode();
     hotkeys(
-        `alt+shift+aalt+shift+s,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
+        `alt+shift+a,alt+shift+s,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
         (event, handler) => {
             switch (handler.key) {
                 case `alt+shift+a`:
