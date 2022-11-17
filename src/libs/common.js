@@ -283,7 +283,7 @@ function outputAlert(selector, message) {
     $(`#butterknife-status-alert`).text(message).attr(`role`, `alert`);
     setTimeout(() => {
         $(`#butterknife-status-alert`).remove();
-    }, 5000);
+    }, 10000);
 }
 
 export {
