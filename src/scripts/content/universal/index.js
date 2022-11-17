@@ -58,26 +58,29 @@ $(document).ready(() => {
                     event.preventDefault();
 
                     break;
-                    case `alt+shift+s`: {
-                        if (isTorchModeEnabled) {
-                            const source = _common.copyElementHTML(torchLevelEvent);
-                            _common.outputAlert(`body`, `Copied: ${source}`);
-                        }
-                        break;
-    
+                case `alt+shift+s`:
+                    if (isTorchModeEnabled) {
+                        const source = _common.copyElementHTML(torchLevelEvent);
+                        _common.outputAlert(`body`, `Copied: ${source}`);
+                    }
+
+                    break;
                 case `alt+shift+1`: {
                     const selector = _common.copyElementSelector(event);
                     _common.outputAlert(`body`, `Copied: ${selector}`);
                     event.preventDefault();
+
                     break;
                 }
-                case `alt+shift+2`: {
-                    const source = _common.copyElementHTML(event);
-                    _common.outputAlert(`body`, `Copied: ${source}`);
-                    event.preventDefault();
+
+                case `alt+shift+2`:
+                    {
+                        const source = _common.copyElementHTML(event);
+                        _common.outputAlert(`body`, `Copied: ${source}`);
+                        event.preventDefault();
+                    }
                     break;
-                }
-                }
+
                 default:
                     break;
             }
