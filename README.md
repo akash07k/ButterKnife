@@ -16,6 +16,7 @@
   - [GitHub Accessibility Fixes](#github-accessibility-fixes)
   - [Universal Enhancements](#universal-enhancements)
   - [DOM Capture (Torch Mode)](#dom-capture-torch-mode)
+    - [What it does:](#what-it-does)
 
 ## How to use
 
@@ -42,7 +43,11 @@ Extension currently contains following features:
 - Implements DOM capture feature for quickly capturing the path and source of an element.
 
 ### DOM Capture (Torch Mode)
+This feature is specifically developed so that we can copy the path and source of any element to the clipboard very quickly without changing the focus.
+While developing/testing the web applications, we hugely require the path and source of a DOM element;
+But interacting back and fourth with the inspect tool is a mess especially for screen reader users. Because it takes our focus away from the web page and this makes us less productive then usual.
 
+#### What it does:
 - implements the hotkeys for quickly capturing the path and source code of a DOM element:
 * Alt+Shift+1 for quickly copying the CSS path of the element to the clipboard
 * Alt+Shift+2 for copying the source of the element to the clipboard
