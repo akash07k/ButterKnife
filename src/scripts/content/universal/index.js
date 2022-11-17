@@ -23,7 +23,7 @@ $(document).ready(() => {
     // It will effectively work even in screen reader specific modes.
     // It can be toggled by pressing `Alt+Shift+A`.
     // Clicking functionality won't work while user has turned on this mode and clicking will copy the CSS selector of the element to the clipboard.
-    // Pressing `Alt+Shift+3` will copy the element HTML source to the clipboard.
+    // Pressing `Alt+Shift+s` will copy the element HTML source to the clipboard.
     // This mode will be disabled by default.
     let isTorchModeEnabled = false;
     // This is the root event which will return the info about the currently clicked element
@@ -43,7 +43,7 @@ $(document).ready(() => {
     // Let's hook the event for enable TorchMode to work
     hookTorchMode();
     hotkeys(
-        `alt+shift+a,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
+        `alt+shift+aalt+shift+s,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
         (event, handler) => {
             switch (handler.key) {
                 case `alt+shift+a`:
@@ -58,7 +58,13 @@ $(document).ready(() => {
                     event.preventDefault();
 
                     break;
-
+                    case `alt+shift+s`: {
+                        if (isTorchModeEnabled) {
+                            const source = _common.copyElementHTML(torchLevelEvent);
+                            _common.outputAlert(`body`, `Copied: ${source}`);
+                        }
+                        break;
+    
                 case `alt+shift+1`: {
                     const selector = _common.copyElementSelector(event);
                     _common.outputAlert(`body`, `Copied: ${selector}`);
@@ -71,12 +77,6 @@ $(document).ready(() => {
                     event.preventDefault();
                     break;
                 }
-                case `alt+shift+3`: {
-                    if (isTorchModeEnabled) {
-                        const source = _common.copyElementHTML(torchLevelEvent);
-                        _common.outputAlert(`body`, `Copied: ${source}`);
-                    }
-                    break;
                 }
                 default:
                     break;
