@@ -282,9 +282,14 @@ function outputAlert(selector, message) {
     const statusAlert = `butterknife-status-alert`;
     $(selector).append(`<div id=${statusAlert}></div>`);
     $(`#${statusAlert}`).addClass(`butterknife-status-alert`);
+    $(`#${statusAlert}`).css({
+        "background-color": `red`,
+        "font-weight": `bold`,
+        "font-size": `xx-large`,
+    });
     $(`#${statusAlert}`).text(message).attr(`role`, `alert`);
     setTimeout(() => {
-        $(`#butterknife-status-alert`).remove();
+        $(`#butterknife-status-alert`).remove({ "background-color": `red` });
     }, 10000);
 }
 
