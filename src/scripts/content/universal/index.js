@@ -43,7 +43,7 @@ $(document).ready(() => {
     // Let's hook the event for enable TorchMode to work
     hookTorchMode();
     hotkeys(
-        `alt+shift+a,alt+shift+s,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
+        `alt+shift+a,alt+shift+s,alt+shift+x,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
         (event, handler) => {
             switch (handler.key) {
                 case `alt+shift+a`:
@@ -65,6 +65,16 @@ $(document).ready(() => {
                     }
 
                     break;
+
+                case `alt+shift+x`:
+                    if (isTorchModeEnabled) {
+                        const xPath = _common.copyElementXPath(event);
+                        _common.outputAlert(`body`, `Copied: ${xPath}`);
+                        torchLevelEvent = event;
+                        event.preventDefault();
+                    }
+                    break;
+
                 case `alt+shift+1`: {
                     const selector = _common.copyElementSelector(event);
                     _common.outputAlert(`body`, `Copied: ${selector}`);
@@ -77,6 +87,14 @@ $(document).ready(() => {
                     {
                         const source = _common.copyElementHTML(event);
                         _common.outputAlert(`body`, `Copied: ${source}`);
+                        event.preventDefault();
+                    }
+                    break;
+
+                case `alt+shift+3`:
+                    {
+                        const xPath = _common.copyElementXPath(event);
+                        _common.outputAlert(`body`, `Copied: ${xPath}`);
                         event.preventDefault();
                     }
                     break;
