@@ -27,13 +27,18 @@
             "js": ["../scripts/content/universal/index.js"],
             "run_at": "document_end"
         }
-
     ],
 
     "background": {
         "service_worker": "../scripts/background/background.js",
         "type": "module"
     },
-    "permissions": ["storage"],
+    "permissions": [
+        "storage",
+        "notifications",
+        "webNavigation",
+        "downloads",
+        "bookmarks"
+    ],
     "host_permissions": ["https://github.com/*"]
 }

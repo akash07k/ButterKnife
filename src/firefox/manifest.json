@@ -37,11 +37,16 @@
             "js": ["../scripts/content/universal/index.js"],
             "run_at": "document_end"
         }
-
     ],
 
     "background": {
         "scripts": ["../scripts/background/background.js"]
     },
-    "permissions": ["storage"]
+    "permissions": [
+        "storage",
+        "notifications",
+        "webNavigation",
+        "downloads",
+        "bookmarks"
+    ]
 }
