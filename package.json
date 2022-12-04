@@ -80,6 +80,7 @@
         "concurrently": "^7.6.0",
         "dompurify": "^2.4.1",
         "hotkeys-js": "^3.10.1",
+        "howler": "^2.2.3",
         "jquery": "^3.6.1",
         "webext-base-css": "^1.4.3",
         "webext-options-sync": "^4.0.0",
