@@ -84,7 +84,8 @@
         "jquery": "^3.6.2",
         "webext-base-css": "^1.4.3",
         "webext-options-sync": "^4.0.0",
-        "webextension-polyfill": "^0.10.0"
+        "webextension-polyfill": "^0.10.0",
+        "xpath-to-css": "^1.1.0"
     },
     "webExt": {
         "sourceDir": "dist",

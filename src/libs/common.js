@@ -1,6 +1,6 @@
 import * as $ from "jquery";
 import { finder } from "@medv/finder";
-import getXPath from "./get-xpath";
+import getXPath from "./get-xpath.ts";
 
 /**
  * Converts an element into heading
@@ -326,6 +326,16 @@ function outputAlert(selector, message) {
     }, 10000);
 }
 
+/**
+ * Implements the region/landmark for an element
+ * @param {HTMLElement} element - The element which we want to implement the region for
+ */
+function implementRegion(element) {
+    $(element).wrap(
+        `<div id="butterknife-region" role="region" aria-label="Butterknife Region"></div>`,
+    );
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -349,4 +359,5 @@ export {
     getElementHTML,
     copyElementHTML,
     outputAlert,
+    implementRegion,
 };

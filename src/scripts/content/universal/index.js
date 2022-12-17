@@ -1,6 +1,7 @@
 import * as $ from "jquery";
 import Browser from "webextension-polyfill";
 import { install } from "@github/hotkey";
+import xPathToCss from "xpath-to-css";
 import hotkeys from "hotkeys-js";
 import * as _tweaks from "./tweaks";
 import * as _common from "../../../libs/common";
@@ -43,7 +44,7 @@ $(document).ready(() => {
     // Let's hook the event for enable TorchMode to work
     hookTorchMode();
     hotkeys(
-        `alt+shift+a,alt+shift+s,alt+shift+x,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
+        `alt+shift+a,alt+shift+s,alt+shift+x,alt+shift+e,alt+shift+r,alt+shift+1,alt+shift+2,alt+shift+3,alt+shift+4,alt+shift+5`,
         (event, handler) => {
             switch (handler.key) {
                 case `alt+shift+a`:
@@ -74,6 +75,44 @@ $(document).ready(() => {
                         event.preventDefault();
                     }
                     break;
+
+                // Implement the region for the chosen element if Torch mode is on. (This will be useful during debugging or testing)
+                case `alt+shift+e`:
+                    {
+                        if (isTorchModeEnabled) {
+                            const source =
+                                _common.copyElementHTML(torchLevelEvent);
+                            _common.implementRegion(event.target);
+                            _common.outputAlert(
+                                `body`,
+                                `Implemented the region for: ${source}`,
+                            );
+                            torchLevelEvent = event;
+                        }
+                    }
+                    break;
+
+                // Implement the region for the chosen element. (This will be useful during debugging or testing)
+                case `alt+shift+r`: {
+                    const elementPath = prompt(
+                        "Enter the xPath or CSS path of the element:",
+                    );
+                    if (elementPath.startsWith("/")) {
+                        _common.implementRegion(xPathToCss(elementPath));
+                        _common.outputAlert(
+                            `body`,
+                            `Implemented the region for: ${elementPath}`,
+                        );
+                    } else {
+                        _common.implementRegion(elementPath);
+                        _common.outputAlert(
+                            `body`,
+                            `Implemented the region for: ${elementPath}`,
+                        );
+                    }
+                    event.preventDefault();
+                    break;
+                }
 
                 case `alt+shift+1`: {
                     const selector = _common.copyElementSelector(event);
