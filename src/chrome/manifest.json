@@ -23,7 +23,7 @@
             "run_at": "document_end"
         },
         {
-            "matches": ["https://*/*"],
+            "matches": ["http://*/*", "https://*/*", "file://*/*"],
             "js": ["../scripts/content/universal/index.js"],
             "run_at": "document_end"
         }
