@@ -322,7 +322,7 @@ function outputAlert(selector, message) {
     });
     $(`#${statusAlert}`).text(message).attr(`role`, `alert`);
     setTimeout(() => {
-        $(`#butterknife-status-alert`).remove({ "background-color": `red` });
+        $(`#butterknife-status-alert`).remove();
     }, 10000);
 }
 
