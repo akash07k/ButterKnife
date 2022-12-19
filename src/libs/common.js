@@ -336,6 +336,17 @@ function implementRegion(element) {
     );
 }
 
+/**
+ * Implements the region/landmark for an element which indicates the end/out of scope
+ * @param {HTMLElement} element - The element which we want to implement the region for
+ */
+function implementOuterRegion(element = `#butterknife-region`) {
+    $(element)
+        .after(`<div id="butterknife-outer-region" role="region" aria-label="Butterknife Outer Region">
+        <p style="color:#8B0000;font-weight:bold;font-size:xx-large;">Stop Now!</p>
+        </div>`);
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -360,4 +371,5 @@ export {
     copyElementHTML,
     outputAlert,
     implementRegion,
+    implementOuterRegion,
 };

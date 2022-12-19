@@ -105,6 +105,7 @@ $(document).ready(() => {
                         );
                     } else {
                         _common.implementRegion(elementPath);
+                        _common.implementOuterRegion();
                         _common.outputAlert(
                             `body`,
                             `Implemented the region for: ${elementPath}`,
