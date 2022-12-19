@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/akash07k/ButterKnife/compare/v1.2.0...v1.4.0) (2022-12-19)
+
+
+### Features
+
+* **deps:** added HowlerJS for playing sonic feedback ([91cbc09](https://github.com/akash07k/ButterKnife/commits/91cbc09e7f4f699ec9abb61e59a0373bdee8ee6e))
+* **manifest:** added few more permissions for upcoming WebSonic functionality ([5240cb5](https://github.com/akash07k/ButterKnife/commits/5240cb507379496a9faa00e3e8f6553dc2c9ba40))
+* **manifest:** apply Universal tweaks to http:// and file:// protocols too ([c12d564](https://github.com/akash07k/ButterKnife/commits/c12d564d7b90bac0d9140bf2bb388dd5877d716a))
+* **universal:** added the outer region functionality ([422cbd0](https://github.com/akash07k/ButterKnife/commits/422cbd0e2d7d74b20bceac69f779138012f518d2))
+* **universal:** feature for implementing the region for the elements ([1cda649](https://github.com/akash07k/ButterKnife/commits/1cda6498153ca0d9ccefbba7c4f6a85cf621cbf9))
+
+
+### Bug Fixes
+
+* **common:** fixed outputAlert element was not removing automatically ([58ad1dc](https://github.com/akash07k/ButterKnife/commits/58ad1dc5fddab71453adc21516aeb01a5bf56413))
+
 ## 1.2.0 (2022-11-17)
 
 

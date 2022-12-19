@@ -1,6 +1,6 @@
 {
     "name": "butterknife",
-    "version": "1.3.5",
+    "version": "1.4.0",
     "description": "ButterKnife is a browser extension to improve and enhance the accessibility as well as usability of various sites across the web",
     "scripts": {
         "build": "concurrently \"npm run clean\" \"npm run build:chrome\" \"npm run build:firefox\"",
