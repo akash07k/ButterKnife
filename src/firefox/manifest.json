@@ -17,7 +17,6 @@
             "strict_min_version": "101.0"
         }
     },
-
     "icons": {
         "128": "../icons/128.png"
     },
@@ -28,24 +27,39 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://github.com/*"],
-            "js": ["../scripts/content/GitHub/index.js"],
+            "matches": [
+                "https://github.com/*"
+            ],
+            "js": [
+                "../scripts/content/GitHub/index.js"
+            ],
             "run_at": "document_end"
         },
         {
-            "matches": ["https://chat.openai.com/*"],
-            "js": ["../scripts/content/ChatGPT/index.js"],
+            "matches": [
+                "https://chat.openai.com/*"
+            ],
+            "js": [
+                "../scripts/content/ChatGPT/index.js"
+            ],
             "run_at": "document_end"
         },
         {
-            "matches": ["http://*/*", "https://*/*", "file://*/*"],
-            "js": ["../scripts/content/universal/index.js"],
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file://*/*"
+            ],
+            "js": [
+                "../scripts/content/universal/index.js"
+            ],
             "run_at": "document_end"
         }
     ],
-
     "background": {
-        "scripts": ["../scripts/background/background.js"]
+        "scripts": [
+            "../scripts/background/background.js"
+        ]
     },
     "permissions": [
         "storage",

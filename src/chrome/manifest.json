@@ -18,8 +18,12 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://github.com/*"],
-            "js": ["../scripts/content/GitHub/index.js"],
+            "matches": [
+                "https://github.com/*"
+            ],
+            "js": [
+                "../scripts/content/GitHub/index.js"
+            ],
             "run_at": "document_end"
         },
         {
@@ -32,12 +36,17 @@
             "run_at": "document_end"
         },
         {
-            "matches": ["http://*/*", "https://*/*", "file://*/*"],
-            "js": ["../scripts/content/universal/index.js"],
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file://*/*"
+            ],
+            "js": [
+                "../scripts/content/universal/index.js"
+            ],
             "run_at": "document_end"
         }
     ],
-
     "background": {
         "service_worker": "../scripts/background/background.js",
         "type": "module"
@@ -49,5 +58,8 @@
         "downloads",
         "bookmarks"
     ],
-    "host_permissions": ["https://github.com/*", "https://chat.openai.com/"]
+    "host_permissions": [
+        "https://github.com/*",
+        "https://chat.openai.com/"
+    ]
 }
