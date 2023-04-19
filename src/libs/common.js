@@ -347,6 +347,17 @@ function implementOuterRegion(element = `#butterknife-region`) {
         </div>`);
 }
 
+/**
+ * Creates an element
+ * @param {HTMLElement} tag - The element which want to create
+ * @param {attr} attributes - The attributes for the element
+ */
+function createElement(tag, attributes) {
+    const element = document.createElement(tag);
+    Object.entries(attributes).forEach(([key, value]) => (element[key] = value));
+    return element;
+}
+
 export {
     makeHeading,
     makeRegion,
@@ -372,4 +383,5 @@ export {
     outputAlert,
     implementRegion,
     implementOuterRegion,
+    createElement,
 };
