@@ -33,6 +33,11 @@
             "run_at": "document_end"
         },
         {
+            "matches": ["https://chat.openai.com/*"],
+            "js": ["../scripts/content/ChatGPT/index.js"],
+            "run_at": "document_end"
+        },
+        {
             "matches": ["http://*/*", "https://*/*", "file://*/*"],
             "js": ["../scripts/content/universal/index.js"],
             "run_at": "document_end"
