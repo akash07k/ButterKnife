@@ -8,6 +8,7 @@
     "homepage_url": "https://github.com/akash07k/ButterKnife",
     "manifest_version": 3,
     "minimum_chrome_version": "100",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApz+f1zjMDdqXRQ3+tCBPSfOqkMNKjXwPFV6q4XYgyfaRVTPSn8k6CkY/pqyUF0SVhmkaWMA3rz4tdcWeuHRAk6mrEQJU+Zx7odthyGJ2c1LCzMs0jIq6qcSqOxJbcE8bNDsHxa6tTizcg51vwAyUxwD4wME0yI+zwrxqoymkd3G1YwsR0rsAzzr5mmM467SBpfb85HMdi74Ku4zNFvqmR5f6aCcfqUUhKLcKfCoip6qvCk5Ie8akj1UWBeHQS+sSLRhSxXaI5Zb6HIRVoEOvxH9+puN3CiJV5diXfD1LUeNX1PGZOTMwO9AswZQTD6gIaKdOEp6u3NcKATfj/j17BwIDAQAB",
     "icons": {
         "128": "../icons/128.png"
     },
