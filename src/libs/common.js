@@ -358,30 +358,39 @@ function createElement(tag, attributes) {
     return element;
 }
 
-export {
-    makeHeading,
-    makeRegion,
-    makeAlert,
-    makeButton,
-    makeLink,
-    makePresentational,
-    makeHidden,
-    makeElementOwn,
-    setLabel,
-    setDescription,
-    setAccessKey,
-    setHotkey,
-    setExpanded,
-    setAriaIdIfNecessary,
-    init,
-    getElementSelector,
-    copyElementSelector,
-    getElementXPath,
-    copyElementXPath,
-    getElementHTML,
-    copyElementHTML,
-    outputAlert,
-    implementRegion,
-    implementOuterRegion,
-    createElement,
-};
+/**
+ * Copies the text to the clipboard
+ * @param {string} text - The which we want to copy to the clipboard
+ */
+function copyToClipboard(text) {
+navigator.clipboard.writeText(text);
+}
+
+    export {
+        makeHeading,
+        makeRegion,
+        makeAlert,
+        makeButton,
+        makeLink,
+        makePresentational,
+        makeHidden,
+        makeElementOwn,
+        setLabel,
+        setDescription,
+        setAccessKey,
+        setHotkey,
+        setExpanded,
+        setAriaIdIfNecessary,
+        init,
+        getElementSelector,
+        copyElementSelector,
+        getElementXPath,
+        copyElementXPath,
+        getElementHTML,
+        copyElementHTML,
+        outputAlert,
+        implementRegion,
+        implementOuterRegion,
+        createElement,
+        copyToClipboard,
+    };
