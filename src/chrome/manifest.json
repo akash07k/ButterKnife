@@ -23,7 +23,7 @@
                 "https://github.com/*"
             ],
             "js": [
-                "../scripts/content/GitHub/index.js"
+                "../scripts/content/GitHub/index.ts"
             ],
             "run_at": "document_end"
         },
@@ -32,7 +32,7 @@
                 "https://chat.openai.com/*"
             ],
             "js": [
-                "../scripts/content/ChatGPT/index.js"
+                "../scripts/content/ChatGPT/index.ts"
             ],
             "run_at": "document_end"
         },
@@ -43,13 +43,13 @@
                 "file://*/*"
             ],
             "js": [
-                "../scripts/content/universal/index.js"
+                "../scripts/content/universal/index.ts"
             ],
             "run_at": "document_end"
         }
     ],
     "background": {
-        "service_worker": "../scripts/background/background.js",
+        "service_worker": "../scripts/background/background.ts",
         "type": "module"
     },
     "permissions": [
