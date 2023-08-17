@@ -70,7 +70,7 @@ function makeHidden(element: Element) {
 
 /**
  * Sets the label for an element
- * @param {Element} element - The element for which whe want to define the label
+ * @param {Element} element - The element for which we want to define the label
  * @param {string} label - The label for the element
  */
 function setLabel(element: Element, label: string) {
