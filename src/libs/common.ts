@@ -1,6 +1,6 @@
 import * as $ from "jquery";
 import { finder } from "@medv/finder";
-import getXPath from "./get-xpath";
+import getXPath from "get-xpath";
 
 /**
  * Converts an element into heading
