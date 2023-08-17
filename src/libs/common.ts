@@ -33,7 +33,7 @@ function makeAlert(element: Element) {
  * @param {Element} element - The element which we want to convert into button
  * @param {string} label - Desired label for the button
  */
-function makeButton(element: Element, label: string) {
+function makeButton(element: Element, label?: string) {
     $(element)
         .attr(`role`, `button`)
         .attr(`aria-label`, label)
